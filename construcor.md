@@ -462,3 +462,375 @@ Main method executed
 > * **Copy constructors** are used to **duplicate object data**.
 
 ---
+
+Perfect 👍
+Let’s organize your content into **well-structured notes**, add **explanations**, and also include a **C# example** that demonstrates all these points.
+
+---
+
+## 🧾 **Notes on Constructors in C# (.NET)**
+
+### 🔹 1. Constructor Basics
+
+* A **constructor** is a special method in a class that is called automatically when an **object** (instance) of that class is created.
+* Its main purpose is to **initialize variables** or **prepare the object for use**.
+
+---
+
+### 🔹 2. Need for a Constructor
+
+* Every class **requires a constructor** to create its object.
+* If you don’t define one, the compiler **automatically provides an implicit (default) constructor**.
+
+---
+
+### 🔹 3. Implicit (Default) Constructor
+
+* When no constructor is explicitly defined, C# automatically adds one with **no parameters**.
+* This **default constructor** initializes:
+
+  * **Value types** → with their default values (`int = 0`, `bool = false`, etc.)
+  * **Reference types** → with `null`.
+
+🟢 Example:
+
+```csharp
+class Student
+{
+    public string Name;
+    public int Age;
+}
+
+// Compiler adds a default constructor automatically
+```
+
+When you create:
+
+```csharp
+Student s = new Student();
+```
+
+Both `Name` and `Age` will be initialized to default values:
+`Name = null`, `Age = 0`.
+
+---
+
+### 🔹 4. Why Define a Constructor Explicitly?
+
+* The **implicit constructor** always initializes variables with the **same values** every time a new instance is created.
+* If you want to assign **different values** to each instance, you must define an **explicit (parameterized) constructor**.
+
+---
+
+### 🔹 5. Parameterized Constructor
+
+* A constructor can take **parameters** so that different objects can be initialized with **different values** each time.
+* This provides **flexibility** and **custom initialization**.
+
+🟢 Example:
+
+```csharp
+class Student
+{
+    public string Name;
+    public int Age;
+
+    // Explicit constructor with parameters
+    public Student(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+}
+```
+
+Now, each instance can have different data:
+
+```csharp
+Student s1 = new Student("Alice", 20);
+Student s2 = new Student("Bob", 22);
+```
+
+---
+
+### 🔹 6. When to Define Constructors Explicitly
+
+Whenever a class needs **specific values** to execute properly (for example, configuration data, user info, etc.),
+you should define a constructor and pass values to it.
+
+🟢 Rule of Thumb:
+
+> “If a class requires data to work, pass that data through a constructor.”
+
+---
+
+### 🔹 7. Summary
+
+| Type of Constructor | Added By  | Takes Parameters | Purpose                                  |
+| ------------------- | --------- | ---------------- | ---------------------------------------- |
+| Implicit (Default)  | Compiler  | No               | Initialize with default values           |
+| Explicit (Default)  | Developer | No               | Initialize with specific values          |
+| Parameterized       | Developer | Yes              | Initialize with custom values per object |
+
+---
+
+## 💡 **Example: Implicit vs Explicit Constructor**
+
+```csharp
+using System;
+
+class Employee
+{
+    public string Name;
+    public int Salary;
+
+    // 1️⃣ Implicit constructor (if this one wasn’t here, compiler adds its own)
+    // public Employee() { }
+
+    // 2️⃣ Explicit parameterized constructor
+    public Employee(string name, int salary)
+    {
+        Name = name;
+        Salary = salary;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Using the explicit constructor
+        Employee e1 = new Employee("John", 30000);
+        Employee e2 = new Employee("Mary", 40000);
+
+        Console.WriteLine($"Employee 1: {e1.Name}, Salary: {e1.Salary}");
+        Console.WriteLine($"Employee 2: {e2.Name}, Salary: {e2.Salary}");
+    }
+}
+```
+
+**Output:**
+
+```
+Employee 1: John, Salary: 30000
+Employee 2: Mary, Salary: 40000
+```
+
+---
+
+## ✅ **Key Takeaways**
+
+1. Every class has a constructor — either **implicit** or **explicit**.
+2. The **implicit constructor** initializes variables with **default values**.
+3. The **explicit constructor** allows **custom initialization** per object.
+4. Whenever your class **requires input values to function**, define a **parameterized constructor**.
+5. Constructors help make your objects more **dynamic, reliable, and maintainable**.
+
+---
+
+Excellent — this is a full lecture transcription from **Naresh i Technologies (Bangarraju sir)** explaining the **difference between static and non-static constructors in C#**.
+
+Here’s a **clean, structured, point-wise summary (notes)** in a professional format with **key C# concepts**, **rules**, and **examples**.
+
+---
+
+# 🧾 Notes: Difference Between Static and Non-Static Constructors in C#
+
+---
+
+## 🔹 1. What is a Constructor?
+
+* A **constructor** is a special method in a class that initializes the fields or variables of that class.
+* It is automatically invoked when an object of the class is created.
+* Purpose: To **initialize the fields/variables** of the class.
+
+---
+
+## 🔹 2. Static vs Non-Static Constructors
+
+| Feature                             | **Static Constructor**                                                      | **Non-Static Constructor (Instance Constructor)**                              |
+| ----------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Declaration**                     | Declared using the `static` keyword                                         | Declared **without** `static` keyword                                          |
+| **Purpose**                         | Initializes **static fields** of the class                                  | Initializes **non-static fields** of the class                                 |
+| **Call Type**                       | **Implicitly** called by CLR                                                | **Explicitly** called when creating an object                                  |
+| **Execution Time**                  | Executes **once**, automatically, before any object is created              | Executes **every time** an object is created                                   |
+| **Execution Order**                 | Executes **first** — before the `Main()` method or any instance constructor | Executes **after** object creation                                             |
+| **Parameters**                      | Cannot have parameters                                                      | Can have parameters                                                            |
+| **Overloading**                     | Cannot be overloaded                                                        | Can be overloaded                                                              |
+| **Implicit Definition**             | Implicitly defined **only if the class has static fields**                  | Implicitly defined in **every class except static classes**                    |
+| **Access to Members**               | Can access only **static members**                                          | Can access **both static and non-static members**                              |
+| **Execution Count (per lifecycle)** | Executes **only once per class**                                            | Executes **0 times** (if no instances) or **N times** (if N instances created) |
+
+---
+
+## 🔹 3. Key Points to Remember
+
+1. **Static fields** → initialized by **static constructor**.
+   **Non-static fields** → initialized by **non-static constructor**.
+
+2. **Static constructor**
+
+   * Is **implicitly called** by the runtime (CLR).
+   * Cannot be **called explicitly**.
+   * Cannot take **parameters**.
+   * Cannot be **overloaded**.
+   * Executes **once per class** before any instance or `Main()` executes.
+
+3. **Non-static constructor**
+
+   * Must be **explicitly called** when creating an object.
+   * Can have **parameters**.
+   * Can be **overloaded**.
+   * Executes **each time** an object is created.
+
+4. **Implicit Constructors**
+
+   * Every **non-static class** automatically gets an **implicit (default) constructor** if no explicit one is defined.
+   * A **static constructor** is implicitly created **only if static fields exist** in the class.
+   * A **static class** cannot have a non-static constructor.
+
+---
+
+## 🔹 4. Execution Order Example
+
+```csharp
+using System;
+
+class ConstructorsDemo
+{
+    static int y;
+    int x;
+
+    // Static constructor
+    static ConstructorsDemo()
+    {
+        Console.WriteLine("Static constructor is called");
+    }
+
+    // Non-static constructor
+    public ConstructorsDemo()
+    {
+        Console.WriteLine("Non-static constructor is called");
+    }
+
+    static void Main()
+    {
+        Console.WriteLine("Main method started");
+
+        ConstructorsDemo d1 = new ConstructorsDemo();
+        ConstructorsDemo d2 = new ConstructorsDemo();
+
+        Console.ReadLine();
+    }
+}
+```
+
+**Output:**
+
+```
+Static constructor is called
+Main method started
+Non-static constructor is called
+Non-static constructor is called
+```
+
+✅ **Explanation:**
+
+* Static constructor executes **once**, automatically, before the first access to the class.
+* Main method runs **after** the static constructor.
+* Non-static constructor executes **each time** an instance is created.
+
+---
+
+## 🔹 5. Parameterized Constructor Example
+
+```csharp
+using System;
+
+class ConstructorsDemo
+{
+    int x;
+    static int y;
+
+    // Static constructor
+    static ConstructorsDemo()
+    {
+        y = 100;
+        Console.WriteLine("Static constructor is called");
+    }
+
+    // Non-static (parameterized) constructor
+    public ConstructorsDemo(int val)
+    {
+        x = val;
+        Console.WriteLine($"Non-static constructor called with value: {x}");
+    }
+
+    static void Main()
+    {
+        ConstructorsDemo d1 = new ConstructorsDemo(10);
+        ConstructorsDemo d2 = new ConstructorsDemo(20);
+        ConstructorsDemo d3 = new ConstructorsDemo(30);
+    }
+}
+```
+
+**Output:**
+
+```
+Static constructor is called
+Non-static constructor called with value: 10
+Non-static constructor called with value: 20
+Non-static constructor called with value: 30
+```
+
+✅ **Explanation:**
+
+* Static constructor → executes once at the start.
+* Non-static constructor → executes **three times** for three instances.
+* Static constructor **cannot** take parameters, while non-static can.
+
+---
+
+## 🔹 6. Why Static Constructors Cannot Have Parameters
+
+* Because **they are implicitly called** by CLR — the developer does **not** call them manually.
+* Since you can’t call it explicitly, there’s **no way to pass arguments** to it.
+* Also, static constructors run **before any code**, so **no prior data** is available to pass as parameters.
+
+---
+
+## 🔹 7. Why Static Constructors Cannot Be Overloaded
+
+* Overloading is based on **different parameter lists**.
+* Static constructors **cannot have parameters**, hence **overloading** is not possible.
+
+---
+
+## 🔹 8. Summary Table
+
+| Concept         | Static Constructor           | Non-Static Constructor      |
+| --------------- | ---------------------------- | --------------------------- |
+| Keyword         | `static`                     | (No keyword)                |
+| Called by       | CLR (Implicitly)             | Developer (Explicitly)      |
+| Parameters      | Not allowed                  | Allowed                     |
+| Overloading     | Not allowed                  | Allowed                     |
+| Access Members  | Only static members          | Static + Non-static members |
+| Execution Time  | Before any object is created | During object creation      |
+| Execution Count | Once per class               | For every object            |
+| Purpose         | Initialize static fields     | Initialize instance fields  |
+
+---
+
+## ✅ **Key Takeaways**
+
+* Static constructors are for **class-level initialization**.
+* Non-static constructors are for **object-level initialization**.
+* Static constructors run **only once per class**, automatically.
+* Non-static constructors run **every time an instance is created**.
+* Static constructors **cannot** have parameters or be overloaded.
+* Every class (except static classes) has an **implicit non-static constructor** if none is defined.
+* Static constructors are **implicitly defined only** when static fields exist.
+
+---
+

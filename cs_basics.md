@@ -1,7 +1,3 @@
-
-
-##  Notes on Visual Studio .NET
-
 ### 1. **What is Visual Studio .NET**
 
 * Visual Studio .NET is an **IDE (Integrated Development Environment)** provided by **Microsoft**.
@@ -15,7 +11,7 @@
   * Windows Services
   * Mobile Applications
 
-> ✅ One IDE can be used to develop all types of applications — no need for multiple tools.
+>  One IDE can be used to develop all types of applications — no need for multiple tools.
 
 ---
 
@@ -185,18 +181,3 @@ Common panels:
 Each window can **auto-hide** to save space on the screen.
 
 ---
-
-### ✅ **Summary**
-
-* Visual Studio .NET = Microsoft IDE for .NET development.
-* Supports multiple languages and project types.
-* Organizes work in **Solutions** and **Projects**.
-* **Namespace** groups classes logically.
-* **Main()** is the program’s entry point.
-* Use **Ctrl + F5** to build and run.
-* Set **Startup Object** when multiple `Main()` methods exist.
-* Fix errors using the **Error List** window.
-
----
-
-Would you like me to format these notes into a **PDF or printable study sheet** (with headings and highlights)?

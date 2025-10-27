@@ -3,7 +3,7 @@
 | ---------- | ------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | 1          | [C# Basics](/cs_basics.md)                        | Syntax, variables, data types, operators, and first C# program.                       |
 | 2          | [Control Flow](/control_flow.md)                  | Conditional statements, loops, and switch expressions.                                |
-| 3          | [Object-Oriented Programming](/oop.md)            | Classes, objects, inheritance, polymorphism, abstraction, and encapsulation.          |
+| 3          | [Object-Oriented Programming](/oop.md)            | Classes, objects, Construor, inheritance, polymorphism, abstraction, and encapsulation.          |
 | 4          | [Advanced C# Concepts](/advanced_cs.md)           | Generics, delegates, events, lambda expressions, and anonymous methods.               |
 | 5          | [Modern C# Features](/modern_features.md)         | Records, pattern matching, async streams, tuples, and local functions.                |
 | 6          | [Memory Management](/memory_management.md)        | Value vs reference types, garbage collection, and memory optimization.                |

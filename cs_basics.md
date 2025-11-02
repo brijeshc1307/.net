@@ -393,4 +393,163 @@ Here:
 ---
 
 
+Here’s a **well-organized study note** based on your provided content about **Visual Studio and Project Creation in C#** 👇
+
+---
+
+# 💻 **Visual Studio – IDE for .NET Application Development**
+
+## 🔹 **What is Visual Studio?**
+
+Visual Studio (VS) is an **Integrated Development Environment (IDE)** used for developing **.NET applications** using languages such as **C#**, **VB.NET**, and others.
+It supports creating various types of applications like:
+
+* Console Applications
+* Windows Applications
+* Web Applications
+
+> **Note:** The current version discussed here is **Visual Studio 2019 (version 16)**.
+
+---
+
+## 🧭 **Opening Visual Studio**
+
+To open Visual Studio:
+
+1. Go to **Windows Search**.
+2. Type **Visual Studio 2019** and click to launch it.
+
+---
+
+## 🧱 **Creating a New Project**
+
+Applications developed in Visual Studio are called **projects**.
+Each project is a collection of files such as:
+
+* Classes
+* Interfaces
+* Structures
+* Enums
+* Delegates
+* HTML, XML, or text files
+
+### Steps to Create a New Project:
+
+1. Click **“Create a new project.”**
+2. In the new window:
+
+   * Under **All languages**, select **C#**.
+   * Under **All platforms**, select **Windows**.
+   * Under **All project types**, select **Console**.
+3. Choose **“Console App (.NET Core)”** and click **Next**.
+4. In the next window:
+
+   * Enter **Project Name:** `FirstProject`
+   * Set **Location:** `<drive>:\CSharp`
+   * Click **Create**.
+
+---
+
+## 📄 **Default Code Generated**
+
+A new file `Program.cs` is created by default with the following code:
+
+```csharp
+using System;
+
+namespace FirstProject
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+
+### Explanation:
+
+* When a project is created, all classes and types are placed inside a **namespace**.
+* The namespace name is **same as the project name** (here, `FirstProject`).
+* A **namespace** is a **logical container** for types like classes, structures, interfaces, enums, and delegates.
+
+---
+
+## ▶️ **Running the Program**
+
+You can execute the program in two ways:
+
+1. **Without Debugging:**
+
+   * Press **Ctrl + F5**
+   * Or go to **Debug → Start Without Debugging**
+   * This will **save, compile, and run** the program and display output:
+
+     ```
+     Hello World!
+     Press any key to continue . . .
+     ```
+
+2. **With Debugging:**
+
+   * Press **F5**
+   * Or go to **Debug → Start Debugging**
+   * The program runs but the console window **closes immediately** after execution.
+   * To keep it open, add:
+
+     ```csharp
+     Console.ReadLine();
+     ```
+
+---
+
+## 🧩 **Adding New Items (Classes)**
+
+To add a new class in the project:
+
+1. Open **Solution Explorer** (right side panel).
+
+   * If not visible → Go to **View → Solution Explorer**.
+2. In Solution Explorer:
+
+   * Right-click on the project name.
+   * Select **Add → New Item → Class**.
+   * Name it (e.g., `Class1.cs`) and click **Add**.
+
+### Example Code in Class1:
+
+```csharp
+static void Main()
+{
+    Console.WriteLine("Second class under the project.");
+    Console.ReadLine();
+}
+```
+
+---
+
+## ⚠️ **Handling Multiple Entry Points**
+
+If your project has **more than one class** containing a `Main()` method, you’ll get an error:
+
+> “Multiple entry points found.”
+
+To fix this:
+
+1. Open **Solution Explorer** → Right-click the project → Select **Properties**.
+2. Under **Startup Object**, select the desired class (e.g., `FirstProject.Class1`).
+
+If your class doesn’t appear:
+
+* Open **Project File** (Right-click → Edit Project File).
+* Locate the `<StartupObject>` tag and set it manually:
+
+  ```xml
+  <StartupObject>FirstProject.Class1</StartupObject>
+  ```
+
+---
+
 

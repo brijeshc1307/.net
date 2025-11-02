@@ -311,17 +311,96 @@ class AddParams {
 ```
 
 ---
-
-# 🧾 **Summary**
-
-| **Type**          | **Structure**       | **Key Feature**             |
-| ----------------- | ------------------- | --------------------------- |
-| 1D Array          | Single row          | Sequential storage          |
-| 2D Array          | Rows & Columns      | Fixed dimensions            |
-| Jagged Array      | Array of arrays     | Variable column sizes       |
-| Implicit Array    | Uses `var`          | Type inferred automatically |
-| Command Line Args | Passed via `Main()` | Captured in `string[] args` |
+Perfect 👍 Here’s how to **write a clean and structured note** explaining the *execution of a C# program using Command-Line Arguments*, including your given examples:
 
 ---
 
-Would you like me to include **illustrative diagrams** (memory layout of 1D, 2D, and jagged arrays) to make this note visually clear for your study material or classroom handout?
+# 💻 **Executing C# Programs with Command-Line Arguments**
+
+After compiling a C# program, you can execute it through the **Command Prompt (CMD)** by passing **arguments** (inputs) directly after the program name.
+
+These arguments are captured in the `string[] args` parameter of the `Main()` method.
+
+---
+
+## 🔹 **Example Program**
+
+```csharp
+using System;
+class AddParams {
+    static void Main(string[] args) {
+        double Sum = 0;
+        foreach (string str in args)
+            Sum = Sum + double.Parse(str);
+        Console.WriteLine("Sum of given {0} numbers is: {1}", args.Length, Sum);
+    }
+}
+```
+
+### 🔸 **Explanation**
+
+* `args` → Stores all values passed from the command line as strings.
+* `double.Parse(str)` → Converts each string argument into a double value.
+* The loop adds all values and displays the result.
+
+---
+
+## ⚙️ **How to Execute from Command Prompt**
+
+Once your program is compiled (for example, `AddParams.cs` → `AddParams.exe`), open the **Command Prompt** and navigate to the directory where the `.exe` file is located.
+
+Then, run the program as shown below 👇
+
+---
+
+###  **Execution Examples**
+
+```
+<drive>:\CSharp> AddParams 10 20 30 ⏎
+```
+
+**Output:**
+
+```
+Sum of given 3 numbers is: 60
+```
+
+---
+
+```
+<drive>:\CSharp> AddParams 34.56 28.93 98.45 63.28 ⏎
+```
+
+**Output:**
+
+```
+Sum of given 4 numbers is: 225.22
+```
+
+---
+
+```
+<drive>:\CSharp> AddParams 938.387 534 348.378 836 174.392 ⏎
+```
+
+**Output:**
+
+```
+Sum of given 5 numbers is: 2830.157
+```
+
+---
+
+```
+<drive>:\CSharp> AddParams 18 48.37 75 56.43 97 85.19 ⏎
+```
+
+**Output:**
+
+```
+Sum of given 6 numbers is: 379.99
+```
+
+---
+
+

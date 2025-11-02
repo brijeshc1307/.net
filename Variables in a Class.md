@@ -1,4 +1,4 @@
-##  1. Introduction
+##  1. Variable in a Class
 
 * **Variable** → A storage location used to hold a value in memory.
 * In C#, inside a **class**, we can declare **4 different kinds of variables**.

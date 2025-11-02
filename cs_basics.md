@@ -181,3 +181,216 @@ Common panels:
 Each window can **auto-hide** to save space on the screen.
 
 ---
+Here’s a clear and concise **note** based on your text:
+
+---
+
+## **Writing the First Program in C# using Notepad**
+
+### **Step 1: Writing the Program**
+
+Open **Notepad** and write the following code:
+
+```csharp
+class First
+{
+    static void Main()
+    {
+        System.Console.WriteLine("My first C# program.");
+    }
+}
+```
+
+---
+
+### **Step 2: Saving the Program**
+
+1. Create a folder named **“CSharp”** on any drive (e.g., D:\CSharp).
+2. Save the file in this folder as **“First.cs”**
+
+   * `.cs` is the extension for C# source files.
+
+---
+
+### **Step 3: Compilation of the Program**
+
+To compile the program, use the **C# Compiler (`csc`)** from the **Developer Command Prompt for Visual Studio**.
+
+#### **Procedure:**
+
+1. Open **Developer Command Prompt for VS** from Windows Search.
+2. Change directory to where your file is saved.
+   Example:
+
+   ```
+   D:\> cd CSharp
+   ```
+3. Compile the program using:
+
+   ```
+   csc First.cs
+   ```
+
+   * If compilation is successful, an executable file **First.exe** is created in the same folder.
+   * This file contains **CIL (Common Intermediate Language)** or **MSIL (Microsoft Intermediate Language)** code.
+
+---
+
+### **Step 4: Executing the Program**
+
+To run the compiled program:
+
+```
+D:\CSharp> First
+```
+
+Output:
+
+```
+My first C# program.
+```
+
+---
+
+## **Understanding the Program**
+
+### **System.Console.WriteLine**
+
+* **Console** is a **pre-defined class** in the **System namespace**.
+* It provides **static methods** for input/output operations such as:
+
+  * `WriteLine()` – Displays output on screen.
+  * `Write()` – Prints output without a new line.
+  * `Read()`, `ReadLine()`, `ReadKey()`, `Clear()` – For reading input or clearing the screen.
+* Since these methods are **static**, they can be called directly using the class name:
+
+  ```csharp
+  System.Console.WriteLine("Hello");
+  ```
+
+---
+
+### **System Namespace**
+
+* A **namespace** is a **logical container** for related types such as:
+
+  * Classes
+  * Structures
+  * Interfaces
+  * Enums
+  * Delegates
+
+#### **Purposes of Namespaces:**
+
+1. **Grouping Related Types**
+
+   * Helps organize similar classes under one logical name.
+2. **Avoiding Naming Conflicts**
+
+   * Prevents errors when multiple classes have the same name.
+
+**Example:**
+
+```csharp
+NSP1.First
+NSP2.First
+```
+
+---
+
+### **Importing Namespaces**
+
+To avoid repeatedly writing the full namespace name, you can **import** a namespace using the **`using` directive**.
+
+#### **Syntax:**
+
+```csharp
+using <namespace>;
+```
+
+#### **Examples:**
+
+```csharp
+using System;
+using Microsoft.VisualBasic;
+```
+
+Each `using` statement should be written separately.
+
+---
+
+### **What is a Directive?**
+
+* A **directive** is an **instruction to the compiler**.
+* The `using` directive tells the compiler from which namespace to fetch the types used in the program.
+
+---
+
+### **Example: Importing a Namespace**
+
+```csharp
+using System;
+
+class Second
+{
+    static void Main()
+    {
+        Console.Clear();
+        Console.WriteLine("Importing a namespace.");
+    }
+}
+```
+
+Here, because `System` is imported, we can use `Console` directly without the `System.` prefix.
+
+---
+
+### **When Multiple Namespaces Have Same Type Name**
+
+If two namespaces contain a type with the same name, you must use the **fully qualified name**:
+
+```csharp
+NSP1.First
+NSP2.First
+```
+
+You cannot rely on `using` in this case.
+
+---
+
+## **Using the “using static” Directive**
+
+### **Introduced in:** C# 6.0
+
+This feature allows you to **import a specific type (class)** and access its **static members** directly **without prefixing the class name**.
+
+#### **Syntax:**
+
+```csharp
+using static <namespace.type>;
+```
+
+#### **Example:**
+
+```csharp
+using static System.Console;
+
+class Third
+{
+    static void Main()
+    {
+        Clear();
+        WriteLine("Importing a type.");
+    }
+}
+```
+
+Here:
+
+* We imported the **Console** class directly.
+* We can use its static methods like `Clear()` and `WriteLine()` without writing `Console.` every time.
+
+---
+
+
+

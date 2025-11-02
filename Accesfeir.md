@@ -1,13 +1,4 @@
-Excellent — this is another **Naresh i Technologies** lecture (by **Bangar Raju sir**) on **Access Specifiers in C# (.NET)**.
-Below are clean, structured, and **exam-ready notes** — fully summarized with **examples, rules, and case-wise analysis**.
-
----
-
-# 🧾 Notes: Access Specifiers in C# (.NET)
-
----
-
-## 🔹 1. What are Access Specifiers?
+## 1. Access Specifiers
 
 * **Access Specifiers** are **special types of modifiers** in C#.
 * They define the **scope (accessibility or visibility)** of:
@@ -18,7 +9,7 @@ Below are clean, structured, and **exam-ready notes** — fully summarized with 
 
 ---
 
-## 🔹 2. List of Access Specifiers in C#
+##  2. List of Access Specifiers in C#
 
 | No. | Access Specifier     | Description                                                                |
 | --- | -------------------- | -------------------------------------------------------------------------- |
@@ -30,7 +21,7 @@ Below are clean, structured, and **exam-ready notes** — fully summarized with 
 
 ---
 
-## 🔹 3. Access Specifiers — Key Concept
+##  3. Access Specifiers — Key Concept
 
 * Access Specifiers **define visibility** — “Who can consume the member or type?”
 * Example:
@@ -42,18 +33,18 @@ Below are clean, structured, and **exam-ready notes** — fully summarized with 
 
 ---
 
-## 🔹 4. Access Specifiers for Members vs Classes
+##  4. Access Specifiers for Members vs Classes
 
 | Context                | Allowed Specifiers                                                         |
 | ---------------------- | -------------------------------------------------------------------------- |
 | **Members of a class** | All 5 (`private`, `internal`, `protected`, `protected internal`, `public`) |
 | **Classes (types)**    | Only 2 → `internal` (default) and `public`                                 |
 
-❌ **You cannot declare a class as:** `private`, `protected`, or `protected internal`.
+**You cannot declare a class as:** `private`, `protected`, or `protected internal`.
 
 ---
 
-## 🔹 5. Default Scopes
+##  5. Default Scopes
 
 | Element                | Default Specifier |
 | ---------------------- | ----------------- |
@@ -62,7 +53,7 @@ Below are clean, structured, and **exam-ready notes** — fully summarized with 
 
 ---
 
-## 🔹 6. Access Specifier Rules Summary
+##  6. Access Specifier Rules Summary
 
 | Specifier              | Accessible Within Same Class | Child Class (Same Project) | Non-Child Class (Same Project) | Child Class (Different Project) | Non-Child Class (Different Project) |
 | ---------------------- | ---------------------------- | -------------------------- | ------------------------------ | ------------------------------- | ----------------------------------- |
@@ -74,9 +65,9 @@ Below are clean, structured, and **exam-ready notes** — fully summarized with 
 
 ---
 
-## 🔹 7. Practical Demonstration (Step-by-Step)
+##  7. Practical Demonstration (Step-by-Step)
 
-### 🧩 Class: `Program.cs`
+###  Class: `Program.cs`
 
 ```csharp
 public class Program
@@ -99,11 +90,11 @@ public class Program
 }
 ```
 
-✅ **All methods are accessible within the same class.**
+ **All methods are accessible within the same class.**
 
 ---
 
-### 🧩 Case 1: Access from **Same Class**
+###  Case 1: Access from **Same Class**
 
 ➡ **All 5 methods are accessible.**
 
@@ -117,7 +108,7 @@ public class Program
 
 ---
 
-### 🧩 Case 2: Access from **Child Class in Same Project**
+###  Case 2: Access from **Child Class in Same Project**
 
 ```csharp
 class Two : Program
@@ -138,7 +129,7 @@ class Two : Program
 
 ---
 
-### 🧩 Case 3: Access from **Non-Child Class in Same Project**
+###  Case 3: Access from **Non-Child Class in Same Project**
 
 ```csharp
 class Three
@@ -156,11 +147,11 @@ class Three
 ```
 
 ➡ **Accessible:** internal, protected internal, public
-❌ Not accessible: private, protected
+ Not accessible: private, protected
 
 ---
 
-### 🧩 Case 4: Access from **Child Class in a Different Project**
+###  Case 4: Access from **Child Class in a Different Project**
 
 Steps:
 
@@ -190,7 +181,7 @@ class Four : Program
 
 ---
 
-### 🧩 Case 5: Access from **Non-Child Class in a Different Project**
+###  Case 5: Access from **Non-Child Class in a Different Project**
 
 ```csharp
 using AccessDemo1;
@@ -210,7 +201,7 @@ class Five
 
 ---
 
-## 🔹 8. Quick Summary Table (All Cases)
+##  8. Quick Summary Table (All Cases)
 
 | Case  | Scenario                            | Accessible Members                          |
 | ----- | ----------------------------------- | ------------------------------------------- |
@@ -222,12 +213,12 @@ class Five
 
 ---
 
-## 🔹 9. Protected Internal Simplified
+##  9. Protected Internal Simplified
 
 * It is a **combination of `protected` + `internal`**.
 * Accessible if **either protected OR internal** is accessible.
 
-🧠 Boolean Logic:
+ Boolean Logic:
 
 ```
 protected_internal = protected || internal
@@ -242,7 +233,7 @@ protected_internal = protected || internal
 
 ---
 
-## 🔹 10. Important Rules
+##  10. Important Rules
 
 1. **Private** members → accessible only within the class.
 2. **Protected** members → accessible within class + derived classes.
@@ -255,7 +246,7 @@ protected_internal = protected || internal
 
 ---
 
-## ✅ **Final Summary**
+##  **Final Summary**
 
 | Specifier              | Scope                                      | Example                  |
 | ---------------------- | ------------------------------------------ | ------------------------ |
@@ -266,15 +257,3 @@ protected_internal = protected || internal
 | **public**             | Anywhere                                   | Global access            |
 
 ---
-
-## 💡 Tips to Remember
-
-* **Private → Class**
-* **Protected → Class + Child**
-* **Internal → Project**
-* **Protected Internal → Project or Child (other project)**
-* **Public → Everywhere**
-
----
-
-Would you like me to include a **diagram (scope visibility chart)** that visually shows accessibility across all five cases? It helps memorize faster.

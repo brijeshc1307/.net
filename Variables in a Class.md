@@ -1,13 +1,4 @@
-Perfect — this is **Bangar Raju sir’s** lecture (Naresh i Technologies) on **“Types of Variables in a Class (C#)”**.
-Below are clear, organized, and **exam-ready notes** covering every point, example, and difference explained in the session.
-
----
-
-# 🧾 Notes: Types of Variables in a Class – C#
-
----
-
-## 🔹 1. Introduction
+##  1. Introduction
 
 * **Variable** → A storage location used to hold a value in memory.
 * In C#, inside a **class**, we can declare **4 different kinds of variables**.
@@ -15,7 +6,7 @@ Below are clear, organized, and **exam-ready notes** covering every point, examp
 
 ---
 
-## 🔹 2. Types of Variables in a Class
+##  2. Types of Variables in a Class
 
 | No. | Type of Variable    | Keyword Used | Also Called As        |
 | --- | ------------------- | ------------ | --------------------- |
@@ -26,7 +17,7 @@ Below are clear, organized, and **exam-ready notes** covering every point, examp
 
 ---
 
-## 🔹 3. Non-Static (Instance) Variables
+##  3. Non-Static (Instance) Variables
 
 ### ➤ Definition:
 
@@ -73,7 +64,7 @@ class Program
 
 ---
 
-## 🔹 4. Static Variables
+##  4. Static Variables
 
 ### ➤ Definition:
 
@@ -112,7 +103,7 @@ class Program
 
 ---
 
-## 🔹 5. Constant Variables (`const`)
+##  5. Constant Variables (`const`)
 
 ### ➤ Definition:
 
@@ -154,7 +145,7 @@ Console.WriteLine(Program.PI); // ✅ works without object
 
 ---
 
-## 🔹 6. Read-Only Variables (`readonly`)
+##  6. Read-Only Variables (`readonly`)
 
 ### ➤ Definition:
 
@@ -219,7 +210,7 @@ class Program
 
 ---
 
-## 🔹 7. Comparison Between All Four
+##  7. Comparison Between All Four
 
 | Feature             | Non-Static      | Static        | Constant       | Read-Only                  |
 | ------------------- | --------------- | ------------- | -------------- | -------------------------- |
@@ -234,7 +225,7 @@ class Program
 
 ---
 
-## 🔹 8. Life Cycle Summary
+##  8. Life Cycle Summary
 
 | Variable Type             | When Memory Allocated | How Many Times Initialized |
 | ------------------------- | --------------------- | -------------------------- |
@@ -245,7 +236,7 @@ class Program
 
 ---
 
-## 🔹 9. Differences & Relationships
+##  9. Differences & Relationships
 
 | Comparison                | Key Difference                                                                            |
 | ------------------------- | ----------------------------------------------------------------------------------------- |
@@ -256,7 +247,7 @@ class Program
 
 ---
 
-## 🔹 10. Choosing the Right Variable Type
+##  10. Choosing the Right Variable Type
 
 | Requirement                      | Variable Type             |
 | -------------------------------- | ------------------------- |
@@ -267,7 +258,7 @@ class Program
 
 ---
 
-## ✅ **Final Summary Chart**
+##  **Final Summary Chart**
 
 | Variable                  | Copies   | When Initialized   | Can Modify? | Instance Needed? | Similar To |
 | ------------------------- | -------- | ------------------ | ----------- | ---------------- | ---------- |
@@ -278,7 +269,7 @@ class Program
 
 ---
 
-### 🧠 Quick Memory Trick
+###  Quick Memory Trick
 
 | Copy Type       | Modifiable     | Variable Type |
 | --------------- | -------------- | ------------- |
@@ -289,7 +280,7 @@ class Program
 
 ---
 
-## 💬 Conclusion
+##  Conclusion
 
 * All four variable types serve different **scenarios**.
 * Choose based on:
@@ -307,4 +298,4 @@ class Program
 
 ---
 
-Would you like me to include a **diagram showing memory allocation** (how static and instance variables differ in memory layout)? It makes the concept easier to visualize.
+

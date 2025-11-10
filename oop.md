@@ -212,4 +212,6 @@ static void Main(string[] args)
 
 ---
 
-Would you like me to format this into a **PDF-ready academic note** (with sections, highlights, and indentation)?
+---
+[⬅️ Basics](/cs_basics.md)      |          [Costructor ➡️](/construcor.md)
+---

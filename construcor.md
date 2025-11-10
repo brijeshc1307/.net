@@ -1,4 +1,4 @@
-## 1. What is a Constructor?
+## 1. Constructor
 
 * A **Constructor** is a **special method** present inside a **class**.
 * It is **responsible for initializing the variables (fields)** of that class.
@@ -750,7 +750,7 @@ Non-static constructor called with value: 30
 
 ---
 ---
-[⬅️ Class](/oop.md)      |          [Inheritance ➡️](/inheritance.md)
+[⬅️ Class](/oop.md)      |          [Inheritance ➡️](/Inheritance.md)
 
 ---
 

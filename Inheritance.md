@@ -1,7 +1,4 @@
-
-## 🧠 **Inheritance in C# – Notes**
-
-### 🔹 1. Definition
+###  1. Inheritance
 
 **Inheritance** is a mechanism of **consuming the members (methods, variables, etc.) of one class in another class** by establishing a **parent–child (base–derived)** relationship between the classes.
 
@@ -9,7 +6,7 @@
 
 ---
 
-### 🔹 2. Real-Life Analogy
+###  2. Real-Life Analogy
 
 * A child inherits properties from parents.
 * Similarly, a **child class** inherits the **members** of a **parent class**.
@@ -17,7 +14,7 @@
 
 ---
 
-### 🔹 3. Syntax
+###  3. Syntax
 
 ```csharp
 class ChildClass : ParentClass
@@ -35,7 +32,7 @@ class ChildClass : ParentClass
 
 ---
 
-### 🔹 4. Advantages of Inheritance
+###  4. Advantages of Inheritance
 
 1. **Code Reusability** – Avoids rewriting existing logic.
 2. **Reduced Application Size** – No redundant code.
@@ -43,7 +40,7 @@ class ChildClass : ParentClass
 
 ---
 
-### 🔹 5. Example
+###  5. Example
 
 ```csharp
 class Class1
@@ -79,7 +76,7 @@ Method 3
 
 ---
 
-### 🔹 6. Key Rules & Concepts
+###  6. Key Rules & Concepts
 
 #### **Rule 1: Parent Constructor Accessibility**
 
@@ -144,7 +141,7 @@ p.Test3();      // ❌ Not accessible
 
 ---
 
-### 🔹 7. Constructor Call Chain
+###  7. Constructor Call Chain
 
 When multiple classes are inherited:
 
@@ -171,7 +168,7 @@ C
 
 ---
 
-### 🔹 8. Important Notes
+###  8. Important Notes
 
 * Default constructor scope is **private**, so always ensure it’s **public** if you want inheritance.
 * Private members are **not inherited**.
@@ -181,7 +178,7 @@ C
 
 ---
 
-### 🔹 9. Summary Table
+###  9. Summary Table
 
 | Concept              | Child → Parent             | Parent → Child             |
 | -------------------- | -------------------------- | -------------------------- |
@@ -192,13 +189,13 @@ C
 
 ---
 
-### 🔹 10. Debugging Tip
+###  10. Debugging Tip
 
 Use **breakpoints** and **F10 (Step Over)** / **F11 (Step Into)** in Visual Studio to trace constructor and method execution order.
 
 ---
 
-### ✅ **Summary**
+###  **Summary**
 
 * Inheritance enables **reusing members of an existing class**.
 * Syntax: `class Derived : Base { }`
@@ -208,17 +205,6 @@ Use **breakpoints** and **F10 (Step Over)** / **F11 (Step Into)** in Visual Stud
 
 ---
 
-Here’s a **well-organized and concise version of your notes** from the given description:
-
----
-
-## **Inheritance – Key Notes**
-
-### **Introduction**
-
-Inheritance allows a child class (derived class) to acquire the properties and behaviors (members) of a parent class (base class). It supports code reusability and logical hierarchy in object-oriented programming (OOP).
-
----
 
 ## **Six Important Points of Inheritance**
 
@@ -373,10 +359,6 @@ Inheritance can be classified based on the **number of parent and child classes*
 | 4        | Default parent                   | All classes inherit from `System.Object`                   |
 | 5        | Types of inheritance             | C# supports only single inheritance through classes        |
 | 6        | Constructor chaining             | Implicit for parameterless; use `base()` for parameterized |
-
----
-
-Here are **clear, structured notes** based on your description of *“How to Use Inheritance in Application Development”* — explained by Mr. Bangarraju (N Technologist).
 
 ---
 
@@ -621,6 +603,7 @@ public class TemporaryStaff : Person
 
 ---
 
-Would you like me to include a **diagram (UML-style hierarchy chart)** showing these relationships visually (Person → Staff → Teaching/NonTeaching → etc.) for your notes?
-
+---
+[⬅️ Constructors](/Construcor.md)      |  [ Encapsulations And Abstraction ➡️](/Encapsulations_Abstraction.md)
+---
 
